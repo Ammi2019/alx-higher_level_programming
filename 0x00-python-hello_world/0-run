@@ -1,2 +1,14 @@
 #!/bin/bash
-python3 ./*.py
+
+if [ -z "PYFILE" ]; then
+	echo "Error PYFILE enviroment variable is not sent"
+	exit 1
+fi
+
+
+if [ -f "PYFILE" ]; then
+	echo "PYFILE exists"
+	exit 1
+fi
+
+python3 "$PYFILE"
