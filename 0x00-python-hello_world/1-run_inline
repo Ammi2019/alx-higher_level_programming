@@ -1,3 +1,13 @@
 #!/bin/bash
-python3
-PYCODE = ./*.py
+
+if [ -z "$PYCODE" ]; then
+	echo "Error python Enviroment does not exist"
+	exit 1
+fi
+
+if [ -f "$PYCODE" ]; then
+	echo "File Exists"
+	exit 1
+fi
+
+python3 -c "$PYCODE"
